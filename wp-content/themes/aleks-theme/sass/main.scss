@@ -1,8 +1,10 @@
-html {
-    font-family: 'Montserrat';
-}
+@import './_variables';
+@import './_mixins';
+@import './_typography';
+@import './_media';
 
 
 body {
     background: #f2f2f2 !important;
 }
+

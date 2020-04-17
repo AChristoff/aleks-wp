@@ -13,6 +13,12 @@
 <body <?php body_class(); ?>>
 
     <header>
-        <p>header</p>
+        <?php wp_nav_menu(
+            array(
+                'theme_location' => 'header-menu',
+                'container_class' => 'custom-menu-class',
+            )
+        )
+        ?>
         <hr>
     </header>

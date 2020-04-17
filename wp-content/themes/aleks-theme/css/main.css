@@ -1,5 +1,114 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Caveat";
+  src: url("../assets/fonts/caveat/Caveat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Caveat";
+  src: url("../assets/fonts/caveat/Caveat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Caveat";
+  src: url("../assets/fonts/caveat/Caveat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/montserrat/Montserrat-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/montserrat/Montserrat-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic; }
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
 html {
-  font-family: 'Montserrat'; }
+  font: 14px/1.5 "Montserrat", sans-serif;
+  color: #333333; }
+
+body, form, input, option, select, textarea, table, th, td {
+  font: inherit; }
+
+h1 {
+  font-size: 5.5rem; }
+
+h2 {
+  font-size: 4.5rem; }
+
+h3 {
+  font-size: 3.7rem; }
+
+h4 {
+  font-size: 3.1rem; }
+
+h5 {
+  font-size: 2.7rem; }
+
+h6 {
+  font-size: 2.3rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Caveat';
+  line-height: 1.1em;
+  margin: 0.3em 0 0.5em 0;
+  font-weight: normal;
+  color: #2BAAC3; }
+
+p, ul, ol {
+  padding-bottom: 1.5em; }
+
+ul, ol {
+  padding-left: 2em; }
+
+li {
+  padding-left: 0.5em; }
+
+ul ul, ul ol, ol ul, ol ol {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em; }
+
+a {
+  text-decoration: none;
+  color: #333333; }
+
+blockquote {
+  padding: 1rem;
+  font-style: italic;
+  opacity: 0.5; }
+  blockquote .quote:before,
+  blockquote .quote:after {
+    content: '"';
+    padding: 0 0.2em; }
+  blockquote .author {
+    text-align: right; }
+    blockquote .author:before {
+      display: inline-block;
+      content: "‒";
+      padding-right: 0.5em; }
 
 body {
   background: #f2f2f2 !important; }
