@@ -12,13 +12,34 @@
 
 <body <?php body_class(); ?>>
 
-    <header>
-        <?php wp_nav_menu(
-            array(
-                'theme_location' => 'header-menu',
-                'container_class' => 'custom-menu-class',
-            )
-        )
-        ?>
+    <header class="site-header">
+
+        <div class="wrapper">
+
+            <section class="site-logo">
+                <i class="fas fa-hiking"></i>
+            </section>
+
+            <section class="site-nav">
+                <?php wp_nav_menu(
+                    array(
+                        'theme_location' => 'top-menu',
+                    )
+                )
+                ?>
+
+            </section>
+
+            <section class="site-search">
+
+                <?php if (is_active_sidebar('site-search')) : ?>
+                    <?php dynamic_sidebar('site-search'); ?>
+                <?php endif; ?>
+
+            </section>
+
+        </div>
+
         <hr>
+
     </header>

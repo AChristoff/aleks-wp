@@ -1,6 +1,13 @@
-<footer class="container">
+<footer class="site-footer">
+
     <hr>
-    <p>footer</p>
+
+    <div class="wrapper">
+
+        <p>footer</p>
+
+    </div>
+
 </footer>
 
 <?php wp_footer(); ?>
