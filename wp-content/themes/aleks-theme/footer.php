@@ -4,7 +4,7 @@
 
     <div class="wrapper">
 
-        <p>footer</p>
+        <h3>Contacts</h3>
 
     </div>
 

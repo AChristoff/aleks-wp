@@ -13,8 +13,8 @@
 }
 
 html {
-	font: #{$font-size-phone}/1.5 'Montserrat', sans-serif !important;
-	color: $color-base-font-black !important;
+	font: #{$font-size-phone}/1.5 'Montserrat', sans-serif;
+	color: $color-base-font-black;
 }
 
 body, form, input, option, select, textarea, table, th, td {
@@ -22,8 +22,8 @@ body, form, input, option, select, textarea, table, th, td {
 }
 
 $headings: h1, h2, h3, h4, h5, h6;
-$heading-size: 5.5;
-$step: 1;
+$heading-size: 3.5;
+$step: 0.7;
 
 @each $heading in $headings {
 
