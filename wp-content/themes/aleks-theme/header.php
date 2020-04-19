@@ -16,10 +16,12 @@
 
         <div class="wrapper">
 
-            <section class="site-logo">
-                <i class="fas fa-hiking"></i>
-                <p>Outdoor Store</p>
-            </section>
+            <a href="<?php echo home_url(); ?>"
+                <section class="site-logo">
+                    <i class="fas fa-hiking"></i>
+                    <p>Outdoor Store</p>
+                </section>
+            </a>
 
             <section class="site-nav">
 

@@ -7,6 +7,7 @@ body.admin-bar #wpadminbar {
 body {
     display: flex;
     height: 100vh;
+    width: 100%;
     flex-direction: column;
     position: absolute;
     top: 0;
@@ -25,17 +26,51 @@ body {
 .site-header {
     padding: 1em 0;
     background-color: #ffffff;
-    border-bottom: 2px solid $color-base-font-black;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 10;
+    box-shadow: none;
+    transition: all 0.3s ease-in;
+
+    &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        content: '';
+        height: 2px;
+        background: rgb(43,170,195);
+        background: linear-gradient(90deg, rgba(43,170,195,1) 0%, rgba(44,85,113,1) 50%, rgba(43,170,195,1) 100%);
+
+    }
+
+    &.active {
+        padding: 0.35em 0;
+        box-shadow: 0 0 0.8em rgba(0, 0, 0, 0.4);
+
+        &:after {
+            display: none;
+        }
+
+        .site-nav {
+            .icon-wrapper {
+                width: 3.3em;
+                height: 3.1em;
+                top: 0.3em;
+            }
+        }
+    }
 
     .site-logo {
         display: flex;
+        font-size: 1em;
+        transition: all 0.3s ease-in;
 
         i {
-            font-size: 2.5em;
+            font-size: 2.8em;
             margin-right: 0.25em;
         }
 
@@ -78,13 +113,14 @@ body {
             top: 0.75em;
             right: 2em;
             width: 3.5em;
-            height: 3.5em;
-            background: $color-base-font-black;
+            height: 3.3em;
+            background: $color-base-font-blue;
             cursor: pointer;
             border: 0.4em solid transparent;
             border-radius: 1em;
             margin: 0 auto 0.3em;
             z-index: 10;
+            transition: all 0.3s ease-in;
 
             &.active:after {
                 animation: 0.8s ease-in forwards fadeIn;
@@ -175,15 +211,15 @@ body {
         input {
             height: 30px;
             padding-left: 0.75em;
-            border: 1px solid $color-base-font-black;
+            border: 1px solid $color-base-font-blue;
             border-radius: 0.5em 0 0 0.5em;
         }
 
         #searchsubmit {
             height: 30px;
             width: 30px;
-            background: $color-base-font-black;
-            border: 1px solid $color-base-font-black;
+            background: $color-base-font-blue;
+            border: 1px solid $color-base-font-blue;
             border-radius: 0 0.5em 0.5em 0;
             margin-left: -6px;
 
@@ -201,12 +237,165 @@ body {
 }
 
 .site-main {
-    margin-top: 6em;
+    margin: 6em 0 4em;
+
+    .site-thumbnail {
+
+        position: relative;
+
+        .company-slogan {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: $pure-white;
+            padding: 0;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 3em;
+
+            span {
+                text-transform: none;
+                font-weight: normal;
+                text-align: center;
+                font-size: 0.5em;
+            }
+        }
+
+        .site-thumbnail-img-wrapper {
+            z-index: 1;
+            display: block;
+            position: relative;
+            width: 100%;
+            height: calc(100vw * 0.5625);
+            max-height: 50vh;
+            border-radius: 0.25em;
+            overflow: hidden;
+            box-shadow: 0 0 1px 0 white inset, 0.1em 0.2em 0.5em 0 rgba(0, 0, 0, 0.1);
+
+            img {
+                z-index: 0;
+                display: block;
+                width: 100%;
+                height: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    .about-us {
+
+    }
+
+    .newsletter {
+
+        h3 {
+            margin: 1em 0 0.5em;
+        }
+
+        form {
+
+            border: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            legend {
+                font-size: 2em;
+                margin: 1em 0;
+            }
+
+            div {
+                flex: 1 1 100%;
+                margin: 0.5em;
+
+                .outdoor-inputs {
+                    width: 100%;
+                }
+
+                &:last-child {
+                    max-width: 100%;
+
+                    .outdoor-btn {
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
 }
 
 .site-footer {
     margin-top: auto;
     display: block;
+    color: $pure-white;
+    padding: 1em 0 2em 0;
+    background: $color-base-font-blue;
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        h3 {
+            color: $pure-white;
+            margin: 1em 0 1.5em;
+            font-weight: bold;
+        }
+
+        a {
+            color: $pure-white;
+        }
+
+        ul {
+            padding: 0;
+
+            li {
+                list-style: none;
+                padding: 0;
+            }
+        }
+
+        .widget-about,
+        .widget-sitemap,
+        .widget-contacts {
+            flex: 0 0 100%;
+        }
+    }
+
+}
+
+.outdoor-inputs {
+    border: 1px solid $color-base-font-blue;
+    border-radius: 0.5em;
+    height: 2.4em;
+    padding-left: 0.5em;
+}
+
+.outdoor-btn {
+    background: $color-base-font-blue;
+    color: $pure-white;
+    border: 1px solid $color-base-font-blue;
+    border-radius: 0.5em;
+    padding: 0.4em 5em;
+
+    &:hover {
+        cursor: pointer;
+        background: rgba(51, 51, 51, 0.05);
+        color: $color-base-font-blue;
+        border: 1px solid $color-base-font-blue;
+    }
 }
 
 @media (max-width: 340px) {

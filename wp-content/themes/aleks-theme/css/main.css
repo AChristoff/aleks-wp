@@ -48,7 +48,7 @@
 
 html {
   font: 14px/1.5 "Montserrat", sans-serif;
-  color: #333333; }
+  color: #2C5571; }
 
 body, form, input, option, select, textarea, table, th, td {
   font: inherit !important; }
@@ -72,7 +72,6 @@ h6 {
   font-size: 1.4rem; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Caveat';
   line-height: 1.1em;
   margin: 0.3em 0 0.5em 0;
   font-weight: normal;
@@ -93,7 +92,7 @@ ul ul, ul ol, ol ul, ol ol {
 
 a {
   text-decoration: none;
-  color: #333333; }
+  color: #2C5571; }
 
 blockquote {
   padding: 1rem;
@@ -189,6 +188,7 @@ blockquote {
   body {
     display: flex;
     height: 100vh;
+    width: 100%;
     flex-direction: column;
     position: absolute;
     top: 0; }
@@ -200,15 +200,38 @@ blockquote {
   .site-header {
     padding: 1em 0;
     background-color: #ffffff;
-    border-bottom: 2px solid #333333;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0; }
+    right: 0;
+    z-index: 10;
+    box-shadow: none;
+    transition: all 0.3s ease-in; }
+    .site-header:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      content: '';
+      height: 2px;
+      background: #2baac3;
+      background: linear-gradient(90deg, #2baac3 0%, #2c5571 50%, #2baac3 100%); }
+    .site-header.active {
+      padding: 0.35em 0;
+      box-shadow: 0 0 0.8em rgba(0, 0, 0, 0.4); }
+      .site-header.active:after {
+        display: none; }
+      .site-header.active .site-nav .icon-wrapper {
+        width: 3.3em;
+        height: 3.1em;
+        top: 0.3em; }
     .site-header .site-logo {
-      display: flex; }
+      display: flex;
+      font-size: 1em;
+      transition: all 0.3s ease-in; }
       .site-header .site-logo i {
-        font-size: 2.5em;
+        font-size: 2.8em;
         margin-right: 0.25em; }
       .site-header .site-logo p {
         padding: 0;
@@ -234,13 +257,14 @@ blockquote {
       top: 0.75em;
       right: 2em;
       width: 3.5em;
-      height: 3.5em;
-      background: #333333;
+      height: 3.3em;
+      background: #2C5571;
       cursor: pointer;
       border: 0.4em solid transparent;
       border-radius: 1em;
       margin: 0 auto 0.3em;
-      z-index: 10; }
+      z-index: 10;
+      transition: all 0.3s ease-in; }
       .site-header .site-nav .icon-wrapper.active:after {
         animation: 0.8s ease-in forwards fadeIn;
         opacity: 0;
@@ -302,13 +326,13 @@ blockquote {
     .site-header .site-search input {
       height: 30px;
       padding-left: 0.75em;
-      border: 1px solid #333333;
+      border: 1px solid #2C5571;
       border-radius: 0.5em 0 0 0.5em; }
     .site-header .site-search #searchsubmit {
       height: 30px;
       width: 30px;
-      background: #333333;
-      border: 1px solid #333333;
+      background: #2C5571;
+      border: 1px solid #2C5571;
       border-radius: 0 0.5em 0.5em 0;
       margin-left: -6px; }
       .site-header .site-search #searchsubmit .fa-search {
@@ -318,10 +342,110 @@ blockquote {
         background: #2BAAC3;
         border: 1px solid #2BAAC3; }
   .site-main {
-    margin-top: 6em; }
+    margin: 6em 0 4em; }
+    .site-main .site-thumbnail {
+      position: relative; }
+      .site-main .site-thumbnail .company-slogan {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 3em; }
+        .site-main .site-thumbnail .company-slogan span {
+          text-transform: none;
+          font-weight: normal;
+          text-align: center;
+          font-size: 0.5em; }
+      .site-main .site-thumbnail .site-thumbnail-img-wrapper {
+        z-index: 1;
+        display: block;
+        position: relative;
+        width: 100%;
+        height: calc(100vw * 0.5625);
+        max-height: 50vh;
+        border-radius: 0.25em;
+        overflow: hidden;
+        box-shadow: 0 0 1px 0 white inset, 0.1em 0.2em 0.5em 0 rgba(0, 0, 0, 0.1); }
+        .site-main .site-thumbnail .site-thumbnail-img-wrapper img {
+          z-index: 0;
+          display: block;
+          width: 100%;
+          height: auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+    .site-main .newsletter h3 {
+      margin: 1em 0 0.5em; }
+    .site-main .newsletter form {
+      border: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end; }
+      .site-main .newsletter form legend {
+        font-size: 2em;
+        margin: 1em 0; }
+      .site-main .newsletter form div {
+        flex: 1 1 100%;
+        margin: 0.5em; }
+        .site-main .newsletter form div .outdoor-inputs {
+          width: 100%; }
+        .site-main .newsletter form div:last-child {
+          max-width: 100%; }
+          .site-main .newsletter form div:last-child .outdoor-btn {
+            width: 100%; }
   .site-footer {
     margin-top: auto;
-    display: block; } }
+    display: block;
+    color: #FFFFFF;
+    padding: 1em 0 2em 0;
+    background: #2C5571; }
+    .site-footer .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      .site-footer .wrapper h3 {
+        color: #FFFFFF;
+        margin: 1em 0 1.5em;
+        font-weight: bold; }
+      .site-footer .wrapper a {
+        color: #FFFFFF; }
+      .site-footer .wrapper ul {
+        padding: 0; }
+        .site-footer .wrapper ul li {
+          list-style: none;
+          padding: 0; }
+      .site-footer .wrapper .widget-about,
+      .site-footer .wrapper .widget-sitemap,
+      .site-footer .wrapper .widget-contacts {
+        flex: 0 0 100%; }
+  .outdoor-inputs {
+    border: 1px solid #2C5571;
+    border-radius: 0.5em;
+    height: 2.4em;
+    padding-left: 0.5em; }
+  .outdoor-btn {
+    background: #2C5571;
+    color: #FFFFFF;
+    border: 1px solid #2C5571;
+    border-radius: 0.5em;
+    padding: 0.4em 5em; }
+    .outdoor-btn:hover {
+      cursor: pointer;
+      background: rgba(51, 51, 51, 0.05);
+      color: #2C5571;
+      border: 1px solid #2C5571; } }
 
 @media (min-width: 1px) and (max-width: 340px) {
   .site-header .site-logo p {
@@ -334,7 +458,7 @@ blockquote {
 @media (min-width: 992px) {
   html {
     font: 15px/1.5 "Montserrat", sans-serif !important;
-    color: #333333 !important; }
+    color: #2C5571 !important; }
   .site-header .wrapper {
     display: flex;
     justify-content: space-between;
@@ -361,7 +485,28 @@ blockquote {
           .site-header .wrapper .site-nav .menu-main-container ul li {
             font-size: 1.1em; }
       .site-header .wrapper .site-nav .icon-wrapper {
-        display: none; } }
+        display: none; }
+  .site-main .newsletter h3 {
+    margin: 1em 0 0.5em; }
+  .site-main .newsletter form {
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end; }
+    .site-main .newsletter form legend {
+      font-size: 2em;
+      margin: 1em 0; }
+    .site-main .newsletter form div {
+      flex: 1 1 14em;
+      max-width: 14em;
+      margin: 0.5em; }
+      .site-main .newsletter form div .outdoor-inputs {
+        width: 100%; }
+      .site-main .newsletter form div:last-child {
+        max-width: 100%; }
+        .site-main .newsletter form div:last-child .outdoor-btn {
+          width: 100%; } }
 
 @media (min-width: 992px) and (max-width: 1080px) {
   .site-header .wrapper .site-search {
@@ -370,7 +515,20 @@ blockquote {
 @media (min-width: 1200px) {
   html {
     font: 16px/1.5 "Montserrat", sans-serif !important;
-    color: #333333 !important; } }
+    color: #2C5571 !important; }
+  .site-header.active .site-logo {
+    font-size: 0.8em; }
+  .site-footer .wrapper .widget-about,
+  .site-footer .wrapper .widget-sitemap,
+  .site-footer .wrapper .widget-contacts {
+    flex: 0 0 24em; }
+    .site-footer .wrapper .widget-about .widget-wrapper,
+    .site-footer .wrapper .widget-sitemap .widget-wrapper,
+    .site-footer .wrapper .widget-contacts .widget-wrapper {
+      width: 80%;
+      margin: 0 auto; }
+  .site-footer .wrapper .widget-about .widget-wrapper {
+    margin: 0 auto 0 0; } }
 
 body {
   background: #F2F2F2 !important; }

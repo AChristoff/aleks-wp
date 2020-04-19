@@ -1,6 +1,6 @@
 html {
     font: #{$font-size-tablet}/1.5 'Montserrat', sans-serif !important;
-    color: $color-base-font-black !important;
+    color: $color-base-font-blue !important;
 }
 
 
@@ -53,6 +53,47 @@ html {
             }
         }
 
+    }
+}
+
+.site-main {
+    .newsletter {
+
+        h3 {
+            margin: 1em 0 0.5em;
+        }
+
+        form {
+
+            border: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            legend {
+                font-size: 2em;
+                margin: 1em 0;
+            }
+
+            div {
+                flex: 1 1 14em;
+                max-width: 14em;
+                margin: 0.5em;
+
+                .outdoor-inputs {
+                    width: 100%;
+                }
+
+                &:last-child {
+                    max-width: 100%;
+
+                    .outdoor-btn {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 }
 
