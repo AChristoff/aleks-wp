@@ -579,3 +579,16 @@ body {
         }
     }
 }
+
+@media (max-width: 400px) {
+
+    .site-main {
+        .services {
+
+            .site-card {
+                flex: 1 1 100%;
+                margin-bottom: 4em;
+            }
+        }
+    }
+}
