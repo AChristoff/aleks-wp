@@ -385,6 +385,67 @@ blockquote {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%); }
+    .site-main .about {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 2em 0; }
+      .site-main .about h3 {
+        width: 100%; }
+      .site-main .about .content,
+      .site-main .about .about-images {
+        flex: 1 1 100%; }
+      .site-main .about .about-images {
+        display: flex;
+        justify-content: space-around;
+        align-items: center; }
+        .site-main .about .about-images .avatar-wrapper {
+          z-index: 1;
+          position: relative;
+          width: 30%;
+          height: 12em;
+          border-radius: 0.25em;
+          overflow: hidden; }
+          .site-main .about .about-images .avatar-wrapper img {
+            display: block;
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); }
+    .site-main .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 2em 0; }
+      .site-main .products h3 {
+        width: 100%; }
+      .site-main .products .content {
+        flex: 1 1 100%; }
+      .site-main .products .product-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2em; }
+        .site-main .products .product-images .product-wrapper {
+          z-index: 1;
+          position: relative;
+          flex: 0 0 30%;
+          height: 27vw;
+          border-radius: 0.25em;
+          overflow: hidden;
+          margin: 1em 1%; }
+          .site-main .products .product-images .product-wrapper img {
+            display: block;
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); }
     .site-main .newsletter h3 {
       margin: 1em 0 0.5em; }
     .site-main .newsletter form {
@@ -486,6 +547,15 @@ blockquote {
             font-size: 1.1em; }
       .site-header .wrapper .site-nav .icon-wrapper {
         display: none; }
+  .site-main .about .content,
+  .site-main .about .about-images {
+    flex: 1 1 40%; }
+  .site-main .about .about-images {
+    display: flex;
+    align-items: flex-start; }
+  .site-main .products .product-images .product-wrapper {
+    flex: 0 0 14%;
+    height: 12vw; }
   .site-main .newsletter h3 {
     margin: 1em 0 0.5em; }
   .site-main .newsletter form {

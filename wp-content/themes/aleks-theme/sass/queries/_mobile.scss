@@ -42,8 +42,8 @@ body {
         display: block;
         content: '';
         height: 2px;
-        background: rgb(43,170,195);
-        background: linear-gradient(90deg, rgba(43,170,195,1) 0%, rgba(44,85,113,1) 50%, rgba(43,170,195,1) 100%);
+        background: rgb(43, 170, 195);
+        background: linear-gradient(90deg, rgba(43, 170, 195, 1) 0%, rgba(44, 85, 113, 1) 50%, rgba(43, 170, 195, 1) 100%);
 
     }
 
@@ -292,8 +292,92 @@ body {
         }
     }
 
-    .about-us {
+    .about {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 2em 0;
 
+        h3 {
+            width: 100%;
+        }
+
+        .content,
+        .about-images {
+            flex: 1 1 100%;
+        }
+
+        .about-images {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .avatar-wrapper {
+                z-index: 1;
+                position: relative;
+                width: 30%;
+                height: 12em;
+                border-radius: 0.25em;
+                overflow: hidden;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                }
+            }
+        }
+    }
+
+
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 2em 0;
+
+        h3 {
+            width: 100%;
+        }
+
+        .content {
+            flex: 1 1 100%;
+        }
+
+        .product-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 2em;
+
+            .product-wrapper {
+                z-index: 1;
+                position: relative;
+                flex: 0 0 30%;
+                height: 27vw;
+                border-radius: 0.25em;
+                overflow: hidden;
+                margin: 1em 1%;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                }
+            }
+        }
     }
 
     .newsletter {

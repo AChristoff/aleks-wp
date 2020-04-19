@@ -57,6 +57,31 @@ html {
 }
 
 .site-main {
+
+    .about {
+        .content,
+        .about-images {
+            flex: 1 1 40%;
+        }
+
+        .about-images {
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+
+
+    .products {
+        .product-images {
+
+            .product-wrapper {
+                flex: 0 0 14%;
+                height: 12vw;
+            }
+        }
+    }
+
+
     .newsletter {
 
         h3 {
