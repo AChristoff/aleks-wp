@@ -102,11 +102,15 @@ body {
 
                 li {
                     list-style: none;
-                    font-size: 1.5em;
+                    font-size: 1.6em;
                     padding: 0.5em;
 
-                    &:hover {
-                        text-decoration: underline;
+                    a {
+                        color: $color-base-font-blue;
+                    }
+
+                    &:hover a {
+                        color: $color-theme-blue;
                     }
                 }
             }
@@ -214,16 +218,22 @@ body {
 
         input {
             height: 30px;
+            width: 10em;
             padding-left: 0.75em;
-            border: 1px solid $color-base-font-blue;
+            border: 1px solid $color-theme-blue;
             border-radius: 0.5em 0 0 0.5em;
+            transition: all 0.2s ease-in;
+
+            &:hover {
+                width: 13em;
+            }
         }
 
         #searchsubmit {
             height: 30px;
             width: 30px;
-            background: $color-base-font-blue;
-            border: 1px solid $color-base-font-blue;
+            border: none;
+            background: linear-gradient(160deg, rgba(43,170,195,1) 0%, rgba(44,85,113,1) 100%);
             border-radius: 0 0.5em 0.5em 0;
             margin-left: -6px;
 
@@ -338,7 +348,6 @@ body {
         }
     }
 
-
     .products {
         position: relative;
         display: flex;
@@ -352,8 +361,9 @@ body {
         -o-background-size: cover;
         background-size: cover;
         border-radius: 0.3em;
-        padding: 0 2em;
+        padding: 2em 2em 3em;
         box-shadow: 0 0 1px 0 white inset, 0.1em 0.2em 0.5em 0 rgba(0, 0, 0, 0.2);
+        overflow: hidden;
 
         &:after {
             content: '';
@@ -376,7 +386,6 @@ body {
         .content {
             flex: 1 1 100%;
             color: $pure-white;
-
             z-index: 2;
         }
 
@@ -412,6 +421,37 @@ body {
                     transform: translate(-50%, -50%);
                     transition: all 0.2s ease-in;
                 }
+            }
+        }
+    }
+
+    .services {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        h3 {
+            width: 100%;
+            margin-top: 1em;
+        }
+
+        .site-card {
+            display: flex;
+            flex-direction: column;
+            flex: 0 1 45%;
+            margin-bottom: 4em;
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 0.4em;
+                margin-bottom: 1em;
+            };
+
+            button {
+                margin-top: auto;
+                font-weight: bold;
             }
         }
     }
@@ -457,11 +497,28 @@ body {
 }
 
 .site-footer {
+    position: relative;
     margin-top: auto;
     display: block;
     color: $pure-white;
     padding: 1em 0 2em 0;
-    background: $color-base-font-blue;
+    background: url("../assets/img/products/section-background.jpg")
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(44, 85, 113, 0.1);
+    }
 
     .wrapper {
         display: flex;
@@ -472,6 +529,7 @@ body {
             color: $pure-white;
             margin: 1em 0 1.5em;
             font-weight: bold;
+            z-index: 2;
         }
 
         a {
@@ -491,6 +549,7 @@ body {
         .widget-sitemap,
         .widget-contacts {
             flex: 0 0 100%;
+            z-index: 2;
         }
     }
 

@@ -81,6 +81,16 @@ html {
         }
     }
 
+    .services {
+
+        .site-card {
+            display: flex;
+            flex-direction: column;
+            flex: 0 1 20%;
+            margin-bottom: 4em;
+        }
+    }
+
 
     .newsletter {
 

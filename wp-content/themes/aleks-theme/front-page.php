@@ -62,21 +62,57 @@
                     <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
                        class="product-wrapper">
                         <img alt="face_three" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_4.png">
-                    <a href="<?php get_site_url(); ?>/e-commerce-site/product/"
-                        class="product-wrapper">
-                        <img alt="face_three" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_5.png">
-                    </a>
-                    <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                       class="product-wrapper">
-                        <img alt="face_three" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_6.png">
-                    </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/product/"
+                           class="product-wrapper">
+                            <img alt="face_three" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_5.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_three" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_6.png">
+                        </a>
                 </div>
             </section>
 
             <section class="services">
                 <h3>Services</h3>
-                <div class="card"></div>
+
+                <div class="site-card">
+                    <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                    <h5>A Subtitle</h5>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </p>
+                    <button class="outdoor-btn">Go to event</button>
+                </div>
+
+                <div class="site-card">
+                    <img alt="face_one"
+                         src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                    <h5>A Subtitle</h5>
+                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.
+                    </p>
+                    <button class="outdoor-btn">Go to event</button>
+                </div>
+
+                <div class="site-card">
+                    <img alt="face_one"
+                         src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                    <h5>A Subtitle</h5>
+                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
+                    </p>
+                    <button class="outdoor-btn">Go to event</button>
+                </div>
+
+                <div class="site-card">
+                    <img alt="face_one"
+                         src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                    <h5>A Subtitle</h5>
+                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    </p>
+                    <button class="outdoor-btn">Go to event</button>
+                </div>
+
             </section>
+
 
             <section class="events"></section>
 
