@@ -47,24 +47,29 @@
                         The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
                 </div>
                 <div class="product-images">
-                    <div class="product-wrapper">
+                    <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                       class="product-wrapper">
                         <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                    </div>
-                    <div class="product-wrapper">
+                    </a>
+                    <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                       class="product-wrapper">
                         <img alt="face_two" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_2.png">
-                    </div>
-                    <div class="product-wrapper">
+                    </a>
+                    <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                       class="product-wrapper">
                         <img alt="face_three" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_3.png">
-                    </div>
-                    <div class="product-wrapper">
+                    </a>
+                    <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                       class="product-wrapper">
                         <img alt="face_three" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_4.png">
-                    </div>
-                    <div class="product-wrapper">
+                    <a href="<?php get_site_url(); ?>/e-commerce-site/product/"
+                        class="product-wrapper">
                         <img alt="face_three" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_5.png">
-                    </div>
-                    <div class="product-wrapper">
+                    </a>
+                    <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                       class="product-wrapper">
                         <img alt="face_three" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_6.png">
-                    </div>
+                    </a>
                 </div>
             </section>
 

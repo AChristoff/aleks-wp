@@ -336,17 +336,44 @@ body {
 
 
     .products {
+        position: relative;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         margin: 2em 0;
+        background: url("../assets/img/products/section-background.jpg")
+        no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        border-radius: 0.3em;
+        padding: 0 2em;
+        box-shadow: 0 0 1px 0 white inset, 0.1em 0.2em 0.5em 0 rgba(0, 0, 0, 0.2);
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(164,164,120, 0.45);
+        }
 
         h3 {
             width: 100%;
+            color: $pure-white;
+            margin-top: 1em;
+            z-index: 2;
         }
 
         .content {
             flex: 1 1 100%;
+            color: $pure-white;
+
+            z-index: 2;
         }
 
         .product-images {
@@ -362,7 +389,7 @@ body {
                 position: relative;
                 flex: 0 0 30%;
                 height: 27vw;
-                border-radius: 0.25em;
+                border-radius: 0.4em;
                 overflow: hidden;
                 margin: 1em 1%;
 
