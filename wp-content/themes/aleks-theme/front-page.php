@@ -77,38 +77,46 @@
                 <h3>Services</h3>
 
                 <div class="site-card">
-                    <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                    <h5>A Subtitle</h5>
+                    <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/services/service_1.png">
+                    <h5>Van rental</h5>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                     </p>
-                    <button class="outdoor-btn">Go to event</button>
+                    <button class="outdoor-btn"
+                            onclick="window.location.href='<?php get_site_url(); ?>/e-commerce-site/company/'">Go to event
+                    </button>
                 </div>
 
                 <div class="site-card">
                     <img alt="face_one"
-                         src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                    <h5>A Subtitle</h5>
+                         src="<?php echo get_template_directory_uri(); ?>/assets/img/services/service_2.png">
+                    <h5>Sky school</h5>
                     <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.
                     </p>
-                    <button class="outdoor-btn">Go to event</button>
+                    <button class="outdoor-btn"
+                            onclick="window.location.href='<?php get_site_url(); ?>/e-commerce-site/company/'">Go to event
+                    </button>
                 </div>
 
                 <div class="site-card">
                     <img alt="face_one"
-                         src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                    <h5>A Subtitle</h5>
+                         src="<?php echo get_template_directory_uri(); ?>/assets/img/services/service_3.png">
+                    <h5>Diving school</h5>
                     <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
                     </p>
-                    <button class="outdoor-btn">Go to event</button>
+                    <button class="outdoor-btn"
+                            onclick="window.location.href='<?php get_site_url(); ?>/e-commerce-site/company/'">Go to event
+                    </button>
                 </div>
 
                 <div class="site-card">
                     <img alt="face_one"
-                         src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                    <h5>A Subtitle</h5>
+                         src="<?php echo get_template_directory_uri(); ?>/assets/img/services/service_4.png">
+                    <h5>Climbing school</h5>
                     <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                     </p>
-                    <button class="outdoor-btn">Go to event</button>
+                    <button class="outdoor-btn"
+                            onclick="window.location.href='<?php get_site_url(); ?>/e-commerce-site/company/'">Go to event
+                    </button>
                 </div>
 
             </section>
