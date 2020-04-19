@@ -73,7 +73,10 @@
                 </div>
             </section>
 
-            <section class="services"></section>
+            <section class="services">
+                <h3>Services</h3>
+                <div class="card"></div>
+            </section>
 
             <section class="events"></section>
 
