@@ -86,8 +86,14 @@ html {
         .site-card {
             display: flex;
             flex-direction: column;
-            flex: 0 1 20%;
+            flex: 0 1 22%;
             margin-bottom: 4em;
+
+            .card-head {
+                &:before {
+                    padding-top: 80%;
+                }
+            }
         }
     }
 

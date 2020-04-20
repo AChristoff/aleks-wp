@@ -51,7 +51,7 @@ html {
   color: #2C5571; }
 
 body, form, input, option, select, textarea, table, th, td {
-  font: inherit !important; }
+  font: inherit; }
 
 h1 {
   font-size: 3.5rem; }
@@ -492,18 +492,48 @@ blockquote {
         width: 100%;
         margin-top: 1em; }
       .site-main .services .site-card {
+        flex: 0 1 45%;
+        margin-bottom: 4em;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
-        flex: 0 1 45%;
-        margin-bottom: 4em; }
-        .site-main .services .site-card img {
-          width: 100%;
-          height: auto;
-          border-radius: 0.4em;
-          margin-bottom: 1em; }
-        .site-main .services .site-card button {
-          margin-top: auto;
-          font-weight: bold; }
+        border-radius: 0.4em;
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 1px 0 white inset, 0.1em 0.2em 0.5em 0 rgba(0, 0, 0, 0.2); }
+        .site-main .services .site-card .card-head {
+          position: relative;
+          overflow: hidden;
+          flex: 0 0 auto;
+          transition: all 0.3s ease-in; }
+          .site-main .services .site-card .card-head:before {
+            display: block;
+            content: '';
+            padding-top: 70%; }
+          .site-main .services .site-card .card-head img {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.2s ease-in; }
+          .site-main .services .site-card .card-head:hover img {
+            display: block;
+            width: 120%; }
+        .site-main .services .site-card .card-body {
+          display: flex;
+          flex-direction: column;
+          flex: 1 1 auto;
+          justify-content: space-between;
+          padding: 0 1em 1em;
+          height: 100%; }
+          .site-main .services .site-card .card-body h5 {
+            margin: 0.75em 0 1em; }
+          .site-main .services .site-card .card-body button {
+            margin-top: auto;
+            font-size: 1em;
+            padding: 0.4em 0; }
     .site-main .newsletter h3 {
       margin: 1em 0 0.5em; }
     .site-main .newsletter form {
@@ -560,6 +590,7 @@ blockquote {
     -moz-appearance: textfield; }
   .outdoor-btn {
     color: #FFFFFF;
+    font-weight: bold;
     border-radius: 0.5em;
     padding: 0.435em 5em;
     border: none;
@@ -575,6 +606,11 @@ blockquote {
     right: 1.2em;
     width: 3.2em;
     height: 3.2em; } }
+
+@media (min-width: 1px) and (max-width: 400px) {
+  .site-main .services .site-card {
+    flex: 1 1 100%;
+    margin-bottom: 4em; } }
 
 @media (min-width: 992px) {
   html {
@@ -619,8 +655,10 @@ blockquote {
   .site-main .services .site-card {
     display: flex;
     flex-direction: column;
-    flex: 0 1 20%;
+    flex: 0 1 22%;
     margin-bottom: 4em; }
+    .site-main .services .site-card .card-head:before {
+      padding-top: 80%; }
   .site-main .newsletter h3 {
     margin: 1em 0 0.5em; }
   .site-main .newsletter form {
