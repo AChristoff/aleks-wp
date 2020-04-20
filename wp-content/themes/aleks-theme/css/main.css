@@ -424,7 +424,7 @@ blockquote {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%); }
-    .site-main .products {
+    .site-main .new-products {
       position: relative;
       display: flex;
       flex-wrap: wrap;
@@ -439,7 +439,7 @@ blockquote {
       padding: 2em 2em 3em;
       box-shadow: 0 0 1px 0 white inset, 0.1em 0.2em 0.5em 0 rgba(0, 0, 0, 0.2);
       overflow: hidden; }
-      .site-main .products:after {
+      .site-main .new-products:after {
         content: '';
         display: block;
         position: absolute;
@@ -448,23 +448,23 @@ blockquote {
         left: 0;
         right: 0;
         background: rgba(44, 85, 113, 0.4); }
-      .site-main .products h3 {
+      .site-main .new-products h3 {
         width: 100%;
         color: #FFFFFF;
         margin-top: 1em;
         z-index: 2; }
-      .site-main .products .content {
+      .site-main .new-products .content {
         flex: 1 1 100%;
         color: #FFFFFF;
         z-index: 2; }
-      .site-main .products .product-images {
+      .site-main .new-products .product-images {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         margin-bottom: 2em; }
-        .site-main .products .product-images .product-wrapper {
+        .site-main .new-products .product-images .product-wrapper {
           z-index: 1;
           position: relative;
           flex: 0 0 30%;
@@ -472,9 +472,9 @@ blockquote {
           border-radius: 0.4em;
           overflow: hidden;
           margin: 1em 1%; }
-          .site-main .products .product-images .product-wrapper:hover img {
+          .site-main .new-products .product-images .product-wrapper:hover img {
             width: 120%; }
-          .site-main .products .product-images .product-wrapper img {
+          .site-main .new-products .product-images .product-wrapper img {
             display: block;
             width: 100%;
             height: auto;
@@ -534,6 +534,87 @@ blockquote {
             margin-top: auto;
             font-size: 1em;
             padding: 0.4em 0; }
+    .site-main .products {
+      position: relative;
+      background: green;
+      padding: 3em 2em;
+      border-radius: 0.3em;
+      box-shadow: 0 0 1px 0 white inset, 0.1em 0.2em 0.5em 0 rgba(0, 0, 0, 0.2);
+      text-align: center;
+      background: url(../assets/img/more-products/more-products-bgrd.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      overflow: hidden; }
+      .site-main .products:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(96, 88, 86, 0.7); }
+      .site-main .products .sale {
+        color: #FFFFFF;
+        position: relative;
+        z-index: 1; }
+        .site-main .products .sale h3 {
+          font-weight: bold;
+          color: #FFFFFF;
+          margin-bottom: 1em; }
+        .site-main .products .sale .sale-images {
+          display: flex;
+          flex-wrap: wrap;
+          width: 80%;
+          margin: 0 auto;
+          padding: 0; }
+          .site-main .products .sale .sale-images .product-wrapper {
+            flex: 1 1 40%;
+            margin: 1em;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.3em; }
+            .site-main .products .sale .sale-images .product-wrapper:after {
+              content: '';
+              display: block;
+              padding-top: 100%; }
+            .site-main .products .sale .sale-images .product-wrapper img {
+              display: block;
+              position: absolute;
+              width: 100%;
+              height: auto;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%); }
+        .site-main .products .sale .outdoor-btn {
+          margin: 1em 0 2em;
+          width: 50%;
+          min-width: 200px;
+          font-size: 1.7em;
+          padding: 0.3em 0 0.5em; }
+        .site-main .products .sale .more-products {
+          display: flex;
+          flex-wrap: wrap; }
+          .site-main .products .sale .more-products .product-wrapper {
+            flex: 1 1 40%;
+            margin: 1em;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.3em; }
+            .site-main .products .sale .more-products .product-wrapper:after {
+              content: '';
+              display: block;
+              padding-top: 100%; }
+            .site-main .products .sale .more-products .product-wrapper img {
+              display: block;
+              position: absolute;
+              width: 100%;
+              height: auto;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%); }
     .site-main .newsletter h3 {
       margin: 1em 0 0.5em; }
     .site-main .newsletter form {
@@ -649,7 +730,7 @@ blockquote {
   .site-main .about .about-images {
     display: flex;
     align-items: flex-start; }
-  .site-main .products .product-images .product-wrapper {
+  .site-main .new-products .product-images .product-wrapper {
     flex: 0 0 14%;
     height: 12vw; }
   .site-main .services .site-card {
@@ -659,6 +740,9 @@ blockquote {
     margin-bottom: 4em; }
     .site-main .services .site-card .card-head:before {
       padding-top: 80%; }
+  .site-main .products .sale .sale-images .product-wrapper,
+  .site-main .products .sale .more-products .product-wrapper {
+    flex: 1 1 20%; }
   .site-main .newsletter h3 {
     margin: 1em 0 0.5em; }
   .site-main .newsletter form {

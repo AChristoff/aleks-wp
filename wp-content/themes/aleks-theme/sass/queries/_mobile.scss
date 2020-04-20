@@ -348,7 +348,7 @@ body {
         }
     }
 
-    .products {
+    .new-products {
         position: relative;
         display: flex;
         flex-wrap: wrap;
@@ -493,6 +493,113 @@ body {
                 }
             }
         }
+    }
+
+    .products {
+        position: relative;
+        background: green;
+        padding: 3em 2em;
+        border-radius: 0.3em;
+        box-shadow: 0 0 1px 0 white inset, 0.1em 0.2em 0.5em 0 rgba(0, 0, 0, 0.2);
+        text-align: center;
+        background: url(../assets/img/more-products/more-products-bgrd.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(96, 88, 86, 0.7);
+        }
+
+       .sale {
+           color: $pure-white;
+           position: relative;
+           z-index: 1;
+
+           h3 {
+               font-weight: bold;
+               color: $pure-white;
+               margin-bottom: 1em;
+           }
+
+           .sale-images {
+               display: flex;
+               flex-wrap: wrap;
+               width: 80%;
+               margin: 0 auto;
+               padding: 0;
+
+               .product-wrapper {
+                   flex: 1 1 40%;
+                   margin: 1em;
+                   position: relative;
+                   overflow: hidden;
+                   border-radius: 0.3em;
+
+                   &:after {
+                       content: '';
+                       display: block;
+                       padding-top: 100%;
+                   }
+
+                   img {
+                       display: block;
+                       position: absolute;
+                       width: 100%;
+                       height: auto;
+                       top: 50%;
+                       left: 50%;
+                       transform: translate(-50%, -50%);
+                   }
+               }
+           }
+
+           .outdoor-btn {
+               margin: 1em 0 2em;
+               width: 50%;
+               min-width: 200px;
+               font-size: 1.7em;
+               padding: 0.3em 0 0.5em;
+           }
+
+           .more-products {
+               display: flex;
+               flex-wrap: wrap;
+
+               .product-wrapper {
+                   flex: 1 1 40%;
+                   margin: 1em;
+                   position: relative;
+                   overflow: hidden;
+                   border-radius: 0.3em;
+
+                   &:after {
+                       content: '';
+                       display: block;
+                       padding-top: 100%;
+                   }
+
+                   img {
+                       display: block;
+                       position: absolute;
+                       width: 100%;
+                       height: auto;
+                       top: 50%;
+                       left: 50%;
+                       transform: translate(-50%, -50%);
+                   }
+               }
+           }
+       }
     }
 
     .newsletter {

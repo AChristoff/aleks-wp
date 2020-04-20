@@ -70,8 +70,7 @@ html {
         }
     }
 
-
-    .products {
+    .new-products {
         .product-images {
 
             .product-wrapper {
@@ -97,6 +96,18 @@ html {
         }
     }
 
+    .products {
+
+        .sale {
+            .sale-images,
+            .more-products {
+
+                .product-wrapper {
+                    flex: 1 1 20%;
+                }
+            }
+        }
+    }
 
     .newsletter {
 

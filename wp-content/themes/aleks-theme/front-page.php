@@ -39,8 +39,8 @@
                 </div>
             </section>
 
-            <section class="products">
-                <h3>Our products</h3>
+            <section class="new-products">
+                <h3>NEW products</h3>
                 <div class="content">
                     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
 
@@ -137,8 +137,100 @@
 
             </section>
 
-
-            <section class="events"></section>
+            <section class="products">
+                <div class="sale">
+                    <h3>Sale</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    <div class="sale-images">
+                        <div class="product-wrapper">
+                            <a href="<?php get_site_url(); ?>/e-commerce-site/products/">
+                                <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                            </a>
+                        </div>
+                        <div class="product-wrapper">
+                            <a href="<?php get_site_url(); ?>/e-commerce-site/products/">
+                                <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                            </a>
+                        </div>
+                        <div class="product-wrapper">
+                            <a href="<?php get_site_url(); ?>/e-commerce-site/products/">
+                                <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                            </a>
+                        </div>
+                        <div class="product-wrapper">
+                            <a href="<?php get_site_url(); ?>/e-commerce-site/products/">
+                                <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                            </a>
+                        </div>
+                    </div>
+                    <button class="outdoor-btn">Button</button>
+                    <div class="more-products">
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
+                           class="product-wrapper">
+                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
+                        </a>
+                    </div>
+            </section>
 
             <section class="newsletter">
                 <h3>Subscribe to our newsletter</h3>
