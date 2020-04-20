@@ -663,6 +663,44 @@ blockquote {
       .site-footer .wrapper .widget-contacts {
         flex: 0 0 100%;
         z-index: 2; }
+  .input-check-success {
+    position: relative; }
+    .input-check-success:before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f00c";
+      color: #00d082;
+      position: absolute;
+      top: 1.9em;
+      z-index: 2;
+      right: 0.6em; }
+    .input-check-success input {
+      border-color: #00d082;
+      box-shadow: 0 0 5px 0 rgba(0, 208, 130, 0.75); }
+      .input-check-success input:focus {
+        outline: none; }
+  .validation-message {
+    visibility: hidden;
+    font-size: 0.8em; }
+  .validation-message.active {
+    visibility: visible;
+    color: #da241a; }
+  .input-check-error {
+    position: relative; }
+    .input-check-error:before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f00d";
+      color: #da241a;
+      position: absolute;
+      top: 1.9em;
+      z-index: 2;
+      right: 0.7em; }
+    .input-check-error input {
+      border-color: #da241a;
+      box-shadow: 0 0 5px 0 rgba(218, 36, 26, 0.75); }
+      .input-check-error input:focus {
+        outline: none; }
   .outdoor-inputs {
     border: 1px solid #2BAAC3;
     border-radius: 0.5em;

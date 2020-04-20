@@ -234,26 +234,50 @@
 
             <section class="newsletter">
                 <h3>Subscribe to our newsletter</h3>
-                <form action="#/account" method="POST">
+                <form action="#/newsletter" method="POST" onsubmit="return isValidForm()">
 
                     <div>
-                        <label for="registerUsername">Name *</label>
-                        <input class="outdoor-inputs" type="text" name="name" id="registerUsername" placeholder="Enter name">
+                        <label for="name">Name *</label>
+                        <input id="name"
+                               class="outdoor-inputs"
+                               type="text"
+                               name="name"
+                               placeholder="Enter name"
+                               onfocusout="validateName()">
+                        <div class="validation-message">Name must contain only letters!</div>
                     </div>
                     <div>
                         <label for="email">Email *</label>
-                        <input class="outdoor-inputs" type="email" id="email" name="email" placeholder="your@email.com">
+                        <input id="email"
+                               class="outdoor-inputs"
+                               type="email"
+                               name="email"
+                               placeholder="your@email.com"
+                               onfocusout="validateEmail('flag')">
+                        <div class="validation-message">Invalid e-mail address!</div>
                     </div>
                     <div>
                         <label for="phone">Phone</label>
-                        <input class="outdoor-inputs" type="number" id="phone" name="phone" placeholder="+359885236225">
+                        <input id="phone"
+                               class="outdoor-inputs"
+                               type="number"
+                               name="phone"
+                               placeholder="+359885236225">
+                        <div class="validation-message">Only digits! (min 6)</div>
                     </div>
                     <div>
                         <label for="age">Age</label>
-                        <input class="outdoor-inputs" type="number" id="age" name="age" min="18" max="100" placeholder="18-100">
+                        <input id="age"
+                               class="outdoor-inputs"
+                               type="number"
+                               name="age"
+                               min="18" max="100"
+                               placeholder="18-100">
+                        <div class="validation-message">Age must be between 18-100!</div>
                     </div>
                     <div>
                         <input class="outdoor-btn" type="submit" value="Subscribe">
+                        <div class="validation-message">_</div>
                     </div>
                 </form>
             </section>
