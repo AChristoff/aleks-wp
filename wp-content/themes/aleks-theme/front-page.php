@@ -5,38 +5,100 @@
         <div class="wrapper">
 
             <section class="site-thumbnail">
+                <?php $the_query = new WP_Query(array('category_name' => 'thumbnail',)); ?>
 
-                <div class="site-thumbnail-img-wrapper">
-                    <img class="site-thumbnail-img"
-                         alt="thumbnail"
-                         src="<?php echo get_template_directory_uri(); ?>/assets/img/thumbnail-unsplash.jpg">
-                </div>
+                <?php if ($the_query->have_posts()) : ?>
+                    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                <h1 class="company-slogan">
-                    <span>The</span>
-                    right equipment
-                    <span>for your trip.</span>
-                </h1>
+                        <?php
+                        ob_start();
+                        the_content('Read the full post', true);
+                        $postText = preg_replace('/<img[^>]+./', '', ob_get_contents());
+                        ob_end_clean();
+                        $postText = str_replace("<p>", "", $postText);
+                        $postText = explode("</p>", $postText);
+                        array_pop($postText);
+
+                        $counter = 0;
+
+                        echo '<h1 class="company-slogan">';
+                        foreach ($postText as $paragraph) {
+                            if ($counter === 1) {
+                                echo $paragraph;
+                            } else {
+                                echo "<span>$paragraph</span>";
+                            }
+                            $counter++;
+                        }
+
+                        echo '</h1>';
+                        ?>
+
+                        <div class="site-thumbnail-img-wrapper">
+                            <?php
+
+                            preg_match_all("/(<img [^>]*>)/", get_the_content(), $matches, PREG_PATTERN_ORDER);
+
+                            for ($i = 0; isset($matches[1]) && $i < count($matches[1]); $i++) {
+                                echo $beforeEachImage . $matches[1][$i] . $afterEachImage;
+                            } ?>
+                        </div>
+
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
+
+                <!--                <h1 class="company-slogan">-->
+                <!--                    <span>The</span>-->
+                <!--                    right equipment-->
+                <!--                    <span>for your trip.</span>-->
+                <!--                </h1>-->
 
             </section>
 
             <section class="about">
-                <h3>About us</h3>
-                <div class="content">
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                </div>
-                <div class="about-images">
-                    <div class="avatar-wrapper">
-                        <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/face_one.png">
-                    </div>
-                    <div class="avatar-wrapper">
-                        <img alt="face_two" src="<?php echo get_template_directory_uri(); ?>/assets/img/face_two.png">
-                    </div>
-                    <div class="avatar-wrapper">
-                        <img alt="face_three" src="<?php echo get_template_directory_uri(); ?>/assets/img/face_three.png">
-                    </div>
-                </div>
+                <?php $the_query = new WP_Query(array('category_name' => 'about_us',)); ?>
+
+                <?php if ($the_query->have_posts()) : ?>
+                    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+                        <div class="content">
+                            <h3><?php the_title(); ?></h3>
+                            <?php
+                            ob_start();
+                            the_content('Read the full post', true);
+                            $postOutput = preg_replace('/<img[^>]+./', '', ob_get_contents());
+                            ob_end_clean();
+                            echo $postOutput;
+                            ?>
+                        </div>
+
+                        <div class="about-images">
+                            <?php
+
+                            preg_match_all("/(<img [^>]*>)/", get_the_content(), $matches, PREG_PATTERN_ORDER);
+
+                            for ($i = 0; isset($matches[1]) && $i < count($matches[1]); $i++) {
+                                echo '<div class="avatar-wrapper">' .
+                                    $beforeEachImage . $matches[1][$i] . $afterEachImage
+                                    . '</div>';
+                            } ?>
+                        </div>
+
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
+                <!--                <div class="about-images">-->
+                <!--                    <div class="avatar-wrapper">-->
+                <!--                        <img alt="face_one" src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/face_one.png">-->
+                <!--                    </div>-->
+                <!--                    <div class="avatar-wrapper">-->
+                <!--                        <img alt="face_two" src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/face_two.png">-->
+                <!--                    </div>-->
+                <!--                    <div class="avatar-wrapper">-->
+                <!--                        <img alt="face_three" src="--><?php //echo get_template_directory_uri(); ?><!--/assets/img/face_three.png">-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </section>
 
             <section class="new-products">
@@ -234,14 +296,14 @@
 
             <section class="newsletter">
                 <h3>Subscribe to our newsletter</h3>
-                <form action="#/newsletter" method="POST" onsubmit="return isValidForm()">
+                <form method="post">
 
                     <div>
-                        <label for="name">Name *</label>
-                        <input id="name"
+                        <label for="user_name">Name *</label>
+                        <input id="user_name"
                                class="outdoor-inputs"
                                type="text"
-                               name="name"
+                               name="user_name"
                                placeholder="Enter name"
                                onfocusout="validateName()">
                         <div class="validation-message">Name must contain only letters!</div>
@@ -276,7 +338,7 @@
                         <div class="validation-message">Age must be between 18-100!</div>
                     </div>
                     <div>
-                        <input class="outdoor-btn" type="submit" value="Subscribe">
+                        <input class="outdoor-btn" type="submit" name="subscribeSubmit" value="Subscribe">
                         <div class="validation-message">_</div>
                     </div>
                 </form>

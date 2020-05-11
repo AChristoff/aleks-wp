@@ -4,6 +4,16 @@ html {
 }
 
 
+.site-header,
+.site-main,
+.site-footer {
+
+    .wrapper {
+        max-width: 80em;
+        padding: 0 2em;
+    }
+}
+
 .site-header {
 
     .wrapper {
@@ -59,14 +69,11 @@ html {
 .site-main {
 
     .about {
-        .content,
+        .content {
+            flex: 1 1 50%;
+        }
         .about-images {
             flex: 1 1 40%;
-        }
-
-        .about-images {
-            display: flex;
-            align-items: flex-start;
         }
     }
 
@@ -75,7 +82,8 @@ html {
 
             .product-wrapper {
                 flex: 0 0 14%;
-                height: 12vw;
+                height: 0;
+                padding-bottom: 14%;
             }
         }
     }

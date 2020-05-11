@@ -36,9 +36,11 @@ function add_custom_theme_support()
 {
     add_theme_support('menus');
     add_theme_support('widgets');
+    add_theme_support('post-thumbnails');
 }
 
 add_action('after_setup_theme', 'add_custom_theme_support');
+add_image_size('custom-image-XL', 1200, 1200, true);
 
 // set menu position
 register_nav_menus(
@@ -68,4 +70,68 @@ function remove_widget_title($widget_title)
     } else {
         return ($widget_title);
     }
+}
+
+
+// On form submit
+
+if (isset($_POST['subscribeSubmit'])) {
+
+    global $wpdb;
+
+    $data_array = array(
+      'user_name' => sanitize_text_field($_POST['user_name']),
+      'email' => sanitize_email($_POST['email']),
+      'phone' => $_POST['phone'],
+      'age' => $_POST['age'],
+    );
+
+    $table_name = 'subscriptions';
+
+    $rowResult = $wpdb->insert($table_name, $data_array, $format=NULL);
+
+    if ($rowResult == 1) {
+        echo '<h1>Submitted</h1>';
+    } else {
+        echo '<h1>Error</h1>';
+    }
+}
+
+// POST Content separation of text and images
+
+function get_content_without_tag( $html, $tag )
+{
+    // Return false if no html or tag is passed
+    if ( !$html || !$tag )
+        return false;
+
+    $dom = new DOMDocument;
+    $dom->loadHTML( $html );
+
+    $dom_x_path = new DOMXPath( $dom );
+    while ($node = $dom_x_path->query( '//' . $tag )->item(0)) {
+        $node->parentNode->removeChild( $node );
+    }
+    return $dom->saveHTML();
+}
+
+
+
+function get_tag_without_text( $html, $tag )
+{
+    // Return false if no html or tag is passed
+    if ( !$html || !$tag )
+        return false;
+
+    $document = new DOMDocument();
+    $document->loadHTML( $html );
+
+    $tags = [];
+    $elements = $document->getElementsByTagName( $tag );
+    if ( $elements ) {
+        foreach ( $elements as $element ) {
+            $tags[] = $document->saveHtml($element);
+        }
+    }
+    return $tags;
 }

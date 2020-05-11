@@ -11,8 +11,28 @@ Template Name: Contacts
 
         <div class="wrapper">
 
-            <h1> Contact us </h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <form method="post">
+
+                <div>
+                    <label for="phone">Phone</label>
+                    <input id="phone"
+                           class="outdoor-inputs"
+                           type="number"
+                           name="phone"
+                           placeholder="+359885236225">
+                </div>
+                <div>
+                    <label for="age">Age</label>
+                    <input id="age"
+                           class="outdoor-inputs"
+                           type="number"
+                           name="age"
+                           min="18" max="100"
+                           placeholder="18-100">
+                </div>
+                <div>
+                    <input class="outdoor-btn" type="submit" name="subscribeSubmit" value="Subscribe">
+                </div>
 
         </div>
 

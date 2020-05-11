@@ -401,7 +401,8 @@ blockquote {
       justify-content: space-between;
       margin: 2em 0; }
       .site-main .about h3 {
-        width: 100%; }
+        width: 100%;
+        margin-top: 0; }
       .site-main .about .content,
       .site-main .about .about-images {
         flex: 1 1 100%; }
@@ -413,7 +414,8 @@ blockquote {
           z-index: 1;
           position: relative;
           width: 30%;
-          height: 12em;
+          height: 0;
+          padding-bottom: 30%;
           border-radius: 0.25em;
           overflow: hidden; }
           .site-main .about .about-images .avatar-wrapper img {
@@ -465,15 +467,31 @@ blockquote {
         width: 100%;
         margin-bottom: 2em; }
         .site-main .new-products .product-images .product-wrapper {
-          z-index: 1;
+          z-index: 2;
           position: relative;
           flex: 0 0 30%;
           height: 27vw;
           border-radius: 0.4em;
           overflow: hidden;
           margin: 1em 1%; }
-          .site-main .new-products .product-images .product-wrapper:hover img {
-            width: 120%; }
+          .site-main .new-products .product-images .product-wrapper:before {
+            content: 'Product Name';
+            color: rgba(255, 255, 255, 0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 100%;
+            transition: all 0.5s ease-in-out;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+          .site-main .new-products .product-images .product-wrapper:hover:before {
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            color: white; }
           .site-main .new-products .product-images .product-wrapper img {
             display: block;
             width: 100%;
@@ -517,7 +535,7 @@ blockquote {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            transition: all 0.2s ease-in; }
+            transition: all 0.25s ease-in; }
           .site-main .services .site-card .card-head:hover img {
             display: block;
             width: 120%; }
@@ -572,10 +590,13 @@ blockquote {
           padding: 0; }
           .site-main .products .sale .sale-images .product-wrapper {
             flex: 1 1 40%;
+            height: 0;
+            padding-bottom: 40%;
             margin: 1em;
             position: relative;
             overflow: hidden;
-            border-radius: 0.3em; }
+            border-radius: 0.3em;
+            z-index: 3; }
             .site-main .products .sale .sale-images .product-wrapper:after {
               content: '';
               display: block;
@@ -669,38 +690,29 @@ blockquote {
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       content: "\f00c";
-      color: #00d082;
       position: absolute;
       top: 1.9em;
       z-index: 2;
       right: 0.6em; }
-    .input-check-success input {
-      border-color: #00d082;
-      box-shadow: 0 0 5px 0 rgba(0, 208, 130, 0.75); }
-      .input-check-success input:focus {
-        outline: none; }
+    .input-check-success input:focus {
+      outline: none; }
   .validation-message {
     visibility: hidden;
     font-size: 0.8em; }
   .validation-message.active {
-    visibility: visible;
-    color: #da241a; }
+    visibility: visible; }
   .input-check-error {
     position: relative; }
     .input-check-error:before {
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       content: "\f00d";
-      color: #da241a;
       position: absolute;
       top: 1.9em;
       z-index: 2;
       right: 0.7em; }
-    .input-check-error input {
-      border-color: #da241a;
-      box-shadow: 0 0 5px 0 rgba(218, 36, 26, 0.75); }
-      .input-check-error input:focus {
-        outline: none; }
+    .input-check-error input:focus {
+      outline: none; }
   .outdoor-inputs {
     border: 1px solid #2BAAC3;
     border-radius: 0.5em;
@@ -731,10 +743,22 @@ blockquote {
     flex: 1 1 100%;
     margin-bottom: 4em; } }
 
+@media (min-width: 576px) {
+  .site-header .wrapper,
+  .site-main .wrapper,
+  .site-footer .wrapper {
+    max-width: 80%;
+    margin: 0 auto; } }
+
 @media (min-width: 992px) {
   html {
     font: 15px/1.5 "Montserrat", sans-serif !important;
     color: #2C5571 !important; }
+  .site-header .wrapper,
+  .site-main .wrapper,
+  .site-footer .wrapper {
+    max-width: 80em;
+    padding: 0 2em; }
   .site-header .wrapper {
     display: flex;
     justify-content: space-between;
@@ -762,15 +786,14 @@ blockquote {
             font-size: 1.1em; }
       .site-header .wrapper .site-nav .icon-wrapper {
         display: none; }
-  .site-main .about .content,
+  .site-main .about .content {
+    flex: 1 1 50%; }
   .site-main .about .about-images {
     flex: 1 1 40%; }
-  .site-main .about .about-images {
-    display: flex;
-    align-items: flex-start; }
   .site-main .new-products .product-images .product-wrapper {
     flex: 0 0 14%;
-    height: 12vw; }
+    height: 0;
+    padding-bottom: 14%; }
   .site-main .services .site-card {
     display: flex;
     flex-direction: column;

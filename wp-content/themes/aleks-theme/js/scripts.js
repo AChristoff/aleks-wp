@@ -19,7 +19,7 @@ $(window).scroll(function () {
 
 
 //Name validation
-const name = $('#name')
+const name = $('#user_name')
 const nameWrapper = name.parent();
 const nameMessage = $(name.next());
 const nameRegex = /[^A-Za-z]+/g;
@@ -130,6 +130,7 @@ function isValidForm() {
 
 
     if (nameFlag && emailFlag) {
+        $('.messageOnSuccess').style('display', 'block');
         return true
     } else if (nameFlag) {
         emailWrapper.addClass('input-check-error');
@@ -147,3 +148,7 @@ function isValidForm() {
         return false;
     }
 }
+
+$("#subscribe-form").submit(function(e) {
+    e.preventDefault();
+});

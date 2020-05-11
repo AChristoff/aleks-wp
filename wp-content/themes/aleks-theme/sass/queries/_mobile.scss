@@ -314,6 +314,7 @@ body {
 
         h3 {
             width: 100%;
+            margin-top: 0;
         }
 
         .content,
@@ -330,7 +331,8 @@ body {
                 z-index: 1;
                 position: relative;
                 width: 30%;
-                height: 12em;
+                height: 0;
+                padding-bottom: 30%;
                 border-radius: 0.25em;
                 overflow: hidden;
 
@@ -397,7 +399,7 @@ body {
             margin-bottom: 2em;
 
             .product-wrapper {
-                z-index: 1;
+                z-index: 2;
                 position: relative;
                 flex: 0 0 30%;
                 height: 27vw;
@@ -405,9 +407,28 @@ body {
                 overflow: hidden;
                 margin: 1em 1%;
 
+                &:before {
+                    content: 'Product Name';
+                    color: rgba(255, 255, 255, 0);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 100%;
+                    transition: all 0.5s ease-in-out;
+                    z-index: 1;
+                    background: rgba(0, 0, 0, 0.2);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
-                &:hover img {
-                    width: 120%;
+                }
+
+
+                &:hover:before {
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.75);
+                    color: rgba(255, 255, 255, 1);
                 }
 
                 img {
@@ -465,7 +486,7 @@ body {
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-                    transition: all 0.2s ease-in;
+                    transition: all 0.25s ease-in;
                 }
 
                 &:hover img {
@@ -540,10 +561,13 @@ body {
 
                 .product-wrapper {
                     flex: 1 1 40%;
+                    height: 0;
+                    padding-bottom: 40%;
                     margin: 1em;
                     position: relative;
                     overflow: hidden;
                     border-radius: 0.3em;
+                    z-index: 3;
 
                     &:after {
                         content: '';
@@ -692,7 +716,7 @@ body {
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         content: "\f00c";
-        color: rgb($color-validation-green-rgb);
+        //color: rgb($color-validation-green-rgb);
         position: absolute;
         top: 1.9em;
         z-index: 2;
@@ -700,8 +724,8 @@ body {
     }
 
     input {
-        border-color: rgb($color-validation-green-rgb);
-        box-shadow: 0 0 5px 0 rgba($color-validation-green-rgb, 0.75);
+        //border-color: rgb($color-validation-green-rgb);
+        //box-shadow: 0 0 5px 0 rgba($color-validation-green-rgb, 0.75);
 
         &:focus {
             outline: none;
@@ -716,7 +740,8 @@ body {
 
 .validation-message.active {
     visibility: visible;
-    color: rgb($color-validation-red-rgb);
+    //color: rgb($color-validation-red-rgb);
+
 }
 
 .input-check-error {
@@ -726,7 +751,7 @@ body {
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         content: "\f00d";
-        color: rgb($color-validation-red-rgb);
+        //color: rgb($color-validation-red-rgb);
         position: absolute;
         top: 1.9em;
         z-index: 2;
@@ -734,8 +759,8 @@ body {
     }
 
     input {
-        border-color: rgb($color-validation-red-rgb);
-        box-shadow: 0 0 5px 0 rgba($color-validation-red-rgb, 0.75);
+        //border-color: rgb($color-validation-red-rgb);
+        //box-shadow: 0 0 5px 0 rgba($color-validation-red-rgb, 0.75);
 
         &:focus {
             outline: none;
