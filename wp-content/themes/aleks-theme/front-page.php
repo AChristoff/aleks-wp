@@ -175,11 +175,9 @@
                             <div class="content">
                                 <h3><?php the_title(); ?></h3>
                                 <?php
-                                ob_start();
-                                the_content('Read the full post', true);
-                                $postOutput = preg_replace('/<img[^>]+./', '', ob_get_contents());
-                                ob_end_clean();
-                                echo $postOutput;
+                                foreach (get_paragraphs(get_the_content()) as $paragraph) {
+                                    echo $paragraph;
+                                }
                                 ?>
                             </div>
 
@@ -187,93 +185,31 @@
                     <?php endif; ?>
 
                     <div class="sale-images">
-                        <div class="product-wrapper">
-                            <a href="<?php get_site_url(); ?>/e-commerce-site/products/">
-                                <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                            </a>
-                        </div>
-                        <div class="product-wrapper">
-                            <a href="<?php get_site_url(); ?>/e-commerce-site/products/">
-                                <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                            </a>
-                        </div>
-                        <div class="product-wrapper">
-                            <a href="<?php get_site_url(); ?>/e-commerce-site/products/">
-                                <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                            </a>
-                        </div>
-                        <div class="product-wrapper">
-                            <a href="<?php get_site_url(); ?>/e-commerce-site/products/">
-                                <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                            </a>
-                        </div>
+                        <?php
+
+                        preg_match_all("/(<img [^>]*>)/", get_the_content(), $matches, PREG_PATTERN_ORDER);
+
+                        for ($i = 0; isset($matches[1]) && $i < 4; $i++) {
+                            echo '<div class="product-wrapper">';
+                            echo '<a href="' . get_site_url() . '/e-commerce-site/products/">' .
+                                $beforeEachImage . $matches[1][$i] . $afterEachImage
+                                . '</a>';
+                            echo '</div>';
+                        } ?>
                     </div>
+
                     <button class="outdoor-btn">Button</button>
+
                     <div class="more-products">
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
-                        <a href="<?php get_site_url(); ?>/e-commerce-site/products/"
-                           class="product-wrapper">
-                            <img alt="face_one" src="<?php echo get_template_directory_uri(); ?>/assets/img/products/product_1.png">
-                        </a>
+                        <?php
+
+                        preg_match_all("/(<img [^>]*>)/", get_the_content(), $matches, PREG_PATTERN_ORDER);
+
+                        for ($i = 4; isset($matches[1]) && $i < count($matches[1]); $i++) {
+                            echo '<a href="' . get_site_url() . '/e-commerce-site/products/" class="product-wrapper">' .
+                                $beforeEachImage . $matches[1][$i] . $afterEachImage
+                                . '</a>';
+                        } ?>
                     </div>
             </section>
 

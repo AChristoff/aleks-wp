@@ -402,10 +402,12 @@ body {
                 z-index: 2;
                 position: relative;
                 flex: 0 0 30%;
-                height: 27vw;
+                height: 0;
+                padding-bottom: 30%;
                 border-radius: 0.4em;
                 overflow: hidden;
                 margin: 1em 1%;
+
 
                 &:before {
                     content: 'Product Name';

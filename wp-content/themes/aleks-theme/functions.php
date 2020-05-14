@@ -99,39 +99,23 @@ if (isset($_POST['subscribeSubmit'])) {
 
 // POST Content separation of text and images
 
-function get_content_without_tag( $html, $tag )
-{
-    // Return false if no html or tag is passed
-    if ( !$html || !$tag )
-        return false;
+function get_paragraphs($content) {
+    ob_start();
+    the_content('Read the full post', true);
+    $paragraph = preg_replace('/<img[^>]+.|(<!--.*[\n\t\s])|(<figure.*[\n\t\s])/', '', $content);
+    ob_end_clean();
+    $paragraph = str_replace("<p>", "-aleksov-", $paragraph);
+    $paragraph = str_replace("</p>", "-aleksov-", $paragraph);
+    $paragraph = explode("-aleksov-", $paragraph);
+    $paragraph = array_filter($paragraph);
+    array_pop($paragraph);
 
-    $dom = new DOMDocument;
-    $dom->loadHTML( $html );
-
-    $dom_x_path = new DOMXPath( $dom );
-    while ($node = $dom_x_path->query( '//' . $tag )->item(0)) {
-        $node->parentNode->removeChild( $node );
-    }
-    return $dom->saveHTML();
+    return $paragraph;
 }
 
+function get_images($content) {
+    preg_match_all("/(<img [^>]*>)/", $content, $images, PREG_PATTERN_ORDER);
 
-
-function get_tag_without_text( $html, $tag )
-{
-    // Return false if no html or tag is passed
-    if ( !$html || !$tag )
-        return false;
-
-    $document = new DOMDocument();
-    $document->loadHTML( $html );
-
-    $tags = [];
-    $elements = $document->getElementsByTagName( $tag );
-    if ( $elements ) {
-        foreach ( $elements as $element ) {
-            $tags[] = $document->saveHtml($element);
-        }
-    }
-    return $tags;
+    return $images;
 }
+

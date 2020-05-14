@@ -470,7 +470,8 @@ blockquote {
           z-index: 2;
           position: relative;
           flex: 0 0 30%;
-          height: 27vw;
+          height: 0;
+          padding-bottom: 30%;
           border-radius: 0.4em;
           overflow: hidden;
           margin: 1em 1%; }
@@ -803,7 +804,9 @@ blockquote {
       padding-top: 80%; }
   .site-main .products .sale .sale-images .product-wrapper,
   .site-main .products .sale .more-products .product-wrapper {
-    flex: 1 1 20%; }
+    flex: 1 1 20%;
+    height: 0;
+    padding-bottom: 20%; }
   .site-main .newsletter h3 {
     margin: 1em 0 0.5em; }
   .site-main .newsletter form {
