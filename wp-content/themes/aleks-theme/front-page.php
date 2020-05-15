@@ -11,18 +11,12 @@
                     <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
                         <?php
-                        ob_start();
-                        the_content('Read the full post', true);
-                        $postText = preg_replace('/<img[^>]+./', '', ob_get_contents());
-                        ob_end_clean();
-                        $postText = str_replace("<p>", "", $postText);
-                        $postText = explode("</p>", $postText);
-                        array_pop($postText);
+
 
                         $counter = 0;
 
                         echo '<h1 class="company-slogan">';
-                        foreach ($postText as $paragraph) {
+                        foreach (get_paragraphs(get_the_content()) as $paragraph) {
                             if ($counter === 1) {
                                 echo $paragraph;
                             } else {
@@ -174,8 +168,9 @@
 
                             <div class="content">
                                 <h3><?php the_title(); ?></h3>
+
                                 <?php
-                                foreach (get_paragraphs(get_the_content()) as $paragraph) {
+                                foreach (get_paragraph(get_the_content()) as $paragraph) {
                                     echo $paragraph;
                                 }
                                 ?>

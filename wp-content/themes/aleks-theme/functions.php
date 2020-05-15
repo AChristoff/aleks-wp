@@ -99,7 +99,7 @@ if (isset($_POST['subscribeSubmit'])) {
 
 // POST Content separation of text and images
 
-function get_paragraphs($content) {
+function get_paragraph($content) {
     ob_start();
     the_content('Read the full post', true);
     $paragraph = preg_replace('/<img[^>]+.|(<!--.*[\n\t\s])|(<figure.*[\n\t\s])/', '', $content);
@@ -111,6 +111,17 @@ function get_paragraphs($content) {
     array_pop($paragraph);
 
     return $paragraph;
+}
+
+
+function get_paragraphs($content) {
+
+    preg_match_all("/<\s*p[^>]*>(.*)<\s*\/\s*p\s*>/", $content, $paragraphArray, PREG_PATTERN_ORDER);
+    array_pop($paragraphArray[0]);
+    $paragraphArray = preg_replace('/[^\w\s]/', '', $paragraphArray[0]);
+    $paragraphArray = preg_replace('/^p|p$/', '', $paragraphArray);
+
+    return $paragraphArray;
 }
 
 function get_images($content) {
