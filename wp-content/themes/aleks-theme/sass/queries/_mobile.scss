@@ -448,71 +448,76 @@ body {
     }
 
     .services {
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
 
         h3 {
             width: 100%;
             margin-top: 1em;
         }
 
-        .site-card {
-            flex: 0 1 45%;
-            margin-bottom: 4em;
-            overflow: hidden;
+        .card-list {
+
+            position: relative;
             display: flex;
-            flex-direction: column;
-            border-radius: 0.4em;
-            background: rgba(255, 255, 255, 0.5);
-            box-shadow: 0 0 1px 0 white inset, 0.1em 0.2em 0.5em 0 rgba(0, 0, 0, 0.2);
+            flex-wrap: wrap;
+            justify-content: space-between;
 
-            .card-head {
-                position: relative;
+
+            .site-card {
+                flex: 0 1 45%;
+                margin-bottom: 4em;
                 overflow: hidden;
-                flex: 0 0 auto;
-                transition: all 0.3s ease-in;
-
-                &:before {
-                    display: block;
-                    content: '';
-                    padding-top: 70%;
-                }
-
-                img {
-                    display: block;
-                    position: absolute;
-                    width: 100%;
-                    height: auto;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    transition: all 0.25s ease-in;
-                }
-
-                &:hover img {
-                    display: block;
-                    width: 120%;
-                }
-            }
-
-            .card-body {
                 display: flex;
                 flex-direction: column;
-                flex: 1 1 auto;
-                justify-content: space-between;
-                padding: 0 1em 1em;
-                height: 100%;
+                border-radius: 0.4em;
+                background: rgba(255, 255, 255, 0.5);
+                box-shadow: 0 0 1px 0 white inset, 0.1em 0.2em 0.5em 0 rgba(0, 0, 0, 0.2);
 
-                h5 {
-                    margin: 0.75em 0 1em;
+                .card-head {
+                    position: relative;
+                    overflow: hidden;
+                    flex: 0 0 auto;
+                    transition: all 0.3s ease-in;
+
+                    &:before {
+                        display: block;
+                        content: '';
+                        padding-top: 70%;
+                    }
+
+                    img {
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: auto;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        transition: all 0.25s ease-in;
+                    }
+
+                    &:hover img {
+                        display: block;
+                        width: 120%;
+                    }
                 }
 
-                button {
-                    margin-top: auto;
-                    font-size: 1em;
-                    padding: 0.4em 0;
+                .card-body {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1 1 auto;
+                    justify-content: space-between;
+                    padding: 0 1em 1em;
+                    height: 100%;
+
+                    h5 {
+                        margin: 0.75em 0 1em;
+                    }
+
+                    button {
+                        margin-top: auto;
+                        font-size: 1em;
+                        padding: 0.4em 0;
+                    }
                 }
             }
         }
@@ -607,6 +612,10 @@ body {
                     position: relative;
                     overflow: hidden;
                     border-radius: 0.3em;
+
+                    &:nth-child(n+9) {
+                        display: none;
+                    }
 
                     &:after {
                         content: '';
@@ -718,7 +727,7 @@ body {
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         content: "\f00c";
-        //color: rgb($color-validation-green-rgb);
+        color: rgb(0, 208, 130);
         position: absolute;
         top: 1.9em;
         z-index: 2;
@@ -726,8 +735,8 @@ body {
     }
 
     input {
-        //border-color: rgb($color-validation-green-rgb);
-        //box-shadow: 0 0 5px 0 rgba($color-validation-green-rgb, 0.75);
+        border-color: rgb(0, 208, 130);
+        box-shadow: 0 0 5px 0 rgba(0, 208, 130, 0.75);
 
         &:focus {
             outline: none;
@@ -742,7 +751,7 @@ body {
 
 .validation-message.active {
     visibility: visible;
-    //color: rgb($color-validation-red-rgb);
+    color: rgb(218, 36, 26);
 
 }
 
@@ -753,7 +762,7 @@ body {
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         content: "\f00d";
-        //color: rgb($color-validation-red-rgb);
+        color: rgb(218, 36, 26);
         position: absolute;
         top: 1.9em;
         z-index: 2;
@@ -761,8 +770,8 @@ body {
     }
 
     input {
-        //border-color: rgb($color-validation-red-rgb);
-        //box-shadow: 0 0 5px 0 rgba($color-validation-red-rgb, 0.75);
+        border-color: rgb(218, 36, 26);
+        box-shadow: 0 0 5px 0 rgba(218, 36, 26, 0.75);
 
         &:focus {
             outline: none;

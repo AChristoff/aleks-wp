@@ -136,6 +136,8 @@
                         $counter = 0;
 
                         // pictures loop
+                        echo '<div class="card-list">';
+
                         for ($i = 0; isset($matches[1]) && $i < count($matches[1]); $i++) {
                             echo '<div class="site-card" >';
                             echo '<div class="card-head">' .
@@ -150,7 +152,11 @@
                             echo '</div>';
                             echo '</div>';
                             $counter += 2;
-                        } ?>
+                        }
+
+                        echo '</div>';
+                        ?>
+
 
                     <?php endwhile; ?>
                 <?php endif; ?>

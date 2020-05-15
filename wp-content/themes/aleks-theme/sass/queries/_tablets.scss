@@ -72,6 +72,7 @@ html {
         .content {
             flex: 1 1 50%;
         }
+
         .about-images {
             flex: 1 1 40%;
         }
@@ -90,15 +91,26 @@ html {
 
     .services {
 
-        .site-card {
-            display: flex;
-            flex-direction: column;
-            flex: 0 1 22%;
-            margin-bottom: 4em;
+        .card-list {
 
-            .card-head {
-                &:before {
-                    padding-top: 80%;
+            &:before,
+            &:after {
+                display: block;
+                content: '';
+                flex: 0 1 22%;
+                order: 1000;
+            }
+
+            .site-card {
+                display: flex;
+                flex-direction: column;
+                flex: 0 1 22%;
+                margin-bottom: 4em;
+
+                .card-head {
+                    &:before {
+                        padding-top: 80%;
+                    }
                 }
             }
         }
@@ -115,6 +127,9 @@ html {
                     height: 0;
                     padding-bottom: 20%;
 
+                    &:nth-child(n+9) {
+                        display: block;
+                    }
                 }
             }
         }
