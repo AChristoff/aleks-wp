@@ -100,10 +100,8 @@ if (isset($_POST['subscribeSubmit'])) {
 // POST Content separation of text and images
 
 function get_paragraph($content) {
-    ob_start();
-    the_content('Read the full post', true);
+
     $paragraph = preg_replace('/<img[^>]+.|(<!--.*[\n\t\s])|(<figure.*[\n\t\s])/', '', $content);
-    ob_end_clean();
     $paragraph = str_replace("<p>", "-aleksov-", $paragraph);
     $paragraph = str_replace("</p>", "-aleksov-", $paragraph);
     $paragraph = explode("-aleksov-", $paragraph);
