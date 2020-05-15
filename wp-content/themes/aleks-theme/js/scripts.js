@@ -49,7 +49,6 @@ let emailFlag = false;
 
 function validateEmail(flag) {
 
-    console.log(flag);
     let validMail = email.val().toString().match(emailRegex);
 
     if (!validMail) {
@@ -87,9 +86,6 @@ function formValidation() {
 
         let phoneLength = phone.val().toString().length;
         let validPhone = phone.val().toString().match(phoneRegex);
-
-        console.log(phoneLength);
-        console.log(validPhone);
 
         if (phoneLength >= 6 && validPhone) {
             phoneWrapper.removeClass('input-check-error');

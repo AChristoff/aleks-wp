@@ -659,6 +659,14 @@ blockquote {
           max-width: 100%; }
           .site-main .newsletter form div:last-child .outdoor-btn {
             width: 100%; }
+    .site-main .newsletter .send-success > h2 {
+      color: #00d082;
+      text-shadow: 0 0 5px rgba(0, 208, 130, 0.55);
+      display: none; }
+    .site-main .newsletter .send-error > h2 {
+      color: #da241a;
+      text-shadow: 0 0 5px rgba(218, 36, 26, 0.55);
+      display: none; }
   .site-footer {
     position: relative;
     margin-top: auto;

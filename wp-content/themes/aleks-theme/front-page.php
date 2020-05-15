@@ -244,7 +244,7 @@
                                class="outdoor-inputs"
                                type="number"
                                name="phone"
-                               placeholder="+359885236225">
+                               placeholder="0885236225">
                         <div class="validation-message">Only digits! (min 6)</div>
                     </div>
                     <div>
@@ -262,6 +262,12 @@
                         <div class="validation-message">_</div>
                     </div>
                 </form>
+                <div class="send-success">
+                    <h2>Thank you for your subscription!</h2>
+                </div>
+                <div class="send-error">
+                    <h2>Invalid input!</h2>
+                </div>
             </section>
 
         </div>

@@ -22,7 +22,7 @@ function add_theme_resources()
     //theme scripts
     wp_enqueue_script(
         'script', get_template_directory_uri() . '/js/scripts.js',
-        array( 'jquery' ), false, 'all');
+        array('jquery'), false, 'all');
 }
 
 add_action('wp_enqueue_scripts', 'add_theme_resources');
@@ -80,26 +80,27 @@ if (isset($_POST['subscribeSubmit'])) {
     global $wpdb;
 
     $data_array = array(
-      'user_name' => sanitize_text_field($_POST['user_name']),
-      'email' => sanitize_email($_POST['email']),
-      'phone' => $_POST['phone'],
-      'age' => $_POST['age'],
+        'user_name' => sanitize_text_field($_POST['user_name']),
+        'email' => sanitize_email($_POST['email']),
+        'phone' => preg_replace('/[^0-9-+\s]/', '', $_POST['phone']),
+        'age' => $_POST['age'],
     );
 
     $table_name = 'subscriptions';
 
-    $rowResult = $wpdb->insert($table_name, $data_array, $format=NULL);
+    $rowResult = $wpdb->insert($table_name, $data_array, $format = null);
 
     if ($rowResult == 1) {
-        echo '<h1>Submitted</h1>';
+
     } else {
-        echo '<h1>Error</h1>';
+
     }
 }
 
 // POST Content separation of text and images
 
-function get_paragraph($content) {
+function get_paragraph($content)
+{
 
     $paragraph = preg_replace('/<img[^>]+.|(<!--.*[\n\t\s])|(<figure.*[\n\t\s])/', '', $content);
     $paragraph = str_replace("<p>", "-aleksov-", $paragraph);
@@ -112,7 +113,8 @@ function get_paragraph($content) {
 }
 
 
-function get_paragraphs($content) {
+function get_paragraphs($content)
+{
 
     preg_match_all("/<\s*p[^>]*>(.*)<\s*\/\s*p\s*>/", $content, $paragraphArray, PREG_PATTERN_ORDER);
     array_pop($paragraphArray[0]);
@@ -122,7 +124,8 @@ function get_paragraphs($content) {
     return $paragraphArray;
 }
 
-function get_images($content) {
+function get_images($content)
+{
     preg_match_all("/(<img [^>]*>)/", $content, $images, PREG_PATTERN_ORDER);
 
     return $images;

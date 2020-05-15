@@ -674,6 +674,18 @@ body {
             }
 
         }
+
+        .send-success > h2 {
+            color: rgb(0, 208, 130);
+            text-shadow: 0 0 5px rgba(0, 208, 130, 0.55);
+            display: none;
+        }
+
+        .send-error > h2 {
+            color: rgb(218, 36, 26);
+            text-shadow: 0 0 5px rgba(218, 36, 26, 0.55);
+            display: none;
+        }
     }
 }
 
